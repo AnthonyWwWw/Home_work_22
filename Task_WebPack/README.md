@@ -1,5 +1,17 @@
 ## TASK_1
 
+# Webpack Configuration
+
+This is a sample webpack configuration file (`webpack.config.js`) for a production environment. It includes settings for bundling JavaScript, CSS, and optimizing images.
+
+## Installation
+
+Make sure you have Node.js and npm installed on your machine.
+
+```bash
+npm install webpack webpack-cli css-loader sass-loader style-loader mini-css-extract-plugin terser-webpack-plugin css-minimizer-webpack-plugin image-minimizer-webpack-plugin babel-loader @babel/preset-env --save-dev
+```
+
 Weather Widget
 
 This is a simple weather widget that displays current weather information for selected cities. It fetches data from the OpenWeatherMap API and displays it on the web page.
