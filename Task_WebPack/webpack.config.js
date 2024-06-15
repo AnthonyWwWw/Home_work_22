@@ -6,7 +6,6 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  watch: true,
   entry: './src/js/main.js',
   output: {
     filename: 'bundle.js',
@@ -17,7 +16,7 @@ module.exports = {
       {
         test: /\.scss$/i,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
         ],
@@ -73,7 +72,7 @@ module.exports = {
       new CssMinimizerPlugin(),
       new ImageMinimizerPlugin({
         test: /\.(jpe?g|png|gif|svg)$/i,
-        severityError: 'warning', // Ignore errors on corrupted images
+        severityError: 'warning',
         minimizer: {
           implementation: ImageMinimizerPlugin.imageminGenerate,
           options: {
@@ -96,8 +95,8 @@ module.exports = {
     ],
   },
   plugins: [
-      new MiniCssExtractPlugin({
-        filename: 'styles.css',
-      }),
+    new MiniCssExtractPlugin({
+      filename: 'styles.css',
+    }),
   ],
 };

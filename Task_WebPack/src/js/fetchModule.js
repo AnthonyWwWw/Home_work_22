@@ -11,5 +11,6 @@ export async function fetchWeather(lat, lon) {
         renderWidget(data);
     } catch (error) {
         console.error('Error fetching weather data:', error);
+        console.error('Error fetching weather data:', error);
     }
 }
